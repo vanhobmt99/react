@@ -10,6 +10,8 @@ function App() {
         return count - 1;
       case 'Clear':
         return 0;
+      case 'nhandoi':
+        return count*2;
       default:
         return count;
     }
@@ -23,6 +25,10 @@ const giam = () => {
 const clear = () => {
   dispatch({type:'Clear'})
 };
+  const nhandoi = () => {
+  dispatch({type:'nhandoi'})
+};
+  
   
   const [count, dispatch] = useReducer(reducer, 0);
 
@@ -30,6 +36,8 @@ const clear = () => {
     <div className="flex flex-col items-center justify-center h-screen">
       <h1>Count {count}</h1>
       <div className="mt-4 space-x-4">
+            <button className="px-4 py-2 bg-blue-500 text-white rounded-lg" onClick={nhandoi()}>x2</button>
+        
         <button className="px-4 py-2 bg-blue-500 text-white rounded-lg" onClick={tang()}>Tang</button>
         
         <button className="px-4 py-2 bg-blue-500 text-white rounded-lg" onClick={clear()}>Clear</button>
