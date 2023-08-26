@@ -36,9 +36,9 @@ const clear = () => {
     <div className="flex flex-col items-center justify-center h-screen">
       <h1>Count {count}</h1>
       <div className="mt-4 space-x-4">
-            <button className="px-4 py-2 bg-blue-500 text-white rounded-lg " onClick={nhandoi}>x2</button>
+            <button className="px-6 py-2 bg-blue-500 text-white rounded-lg " onClick={nhandoi}>x2</button>
         
-        <button className="px-4 py-2 bg-blue-500 text-white rounded-lg" onClick={tang}>Tang</button>
+        <button className="px-4 py-2 bg-red-500 text-white rounded-lg" onClick={tang}>Tang</button>
         
         <button className="px-4 py-2 bg-green-500 text-white rounded-lg" onClick={clear}>Clear</button>
         <button className="px-4 py-2 bg-yellow-500 text-white rounded-lg" onClick={giam}>Giam</button>
