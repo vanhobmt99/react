@@ -1,71 +1,31 @@
-import { useReducer } from "react";
-import  abc  from "./photo-1518780664697-55e3ad937233.avif";
+
+import dummy1 from "./dummy_1.jpg";
+import dummy2 from "./dummy_2.jpg";
+import dummy3 from "./dummy_3.jpg";
 
 function App() {
-  const reducer = (count, action) => {
-    switch (action.type) {
-      case "Tang":
-        return count + 1;
-      case "Giam":
-        return count - 1;
-      case "Clear":
-        return 0;
-      case "nhandoi":
-        return count * 2;
-      default:
-        return count;
-    }
-  };
-  const tang = () => {
-    dispatch({ type: "Tang" });
-  };
-  const giam = () => {
-    dispatch({ type: "Giam" });
-  };
-  const clear = () => {
-    dispatch({ type: "Clear" });
-  };
-  const nhandoi = () => {
-    dispatch({ type: "nhandoi" });
-  };
-
-  const [count, dispatch] = useReducer(reducer, 0);
-
   return (
-    <div className="flex flex-col items-center justify-center md:flex-row h-screen ">
-      <div className="mx-20 mb-5">
-        <h1 className="text-4xl font-bold mb-4 text-center">Count {count}</h1>
-        <div className="mt-4 space-x-3">
-          <button
-            className="px-7 py-2 bg-blue-500 text-white rounded-lg "
-            onClick={nhandoi}
-          >
-            x2
-          </button>
-
-          <button
-            className="px-5 py-2 bg-red-500 text-white rounded-lg"
-            onClick={tang}
-          >
-            UP
-          </button>
-
-          <button
-            className="px-5 py-2 bg-green-500 text-white rounded-lg"
-            onClick={clear}
-          >
-            Clear
-          </button>
-          <button
-            className="px-5 py-2 bg-yellow-500 text-white rounded-lg"
-            onClick={giam}
-          >
-            DOWN
-          </button>
+    <div>
+      <div className="text-4xl text-center bg-green-700 mb-2">Book for dummy</div>
+      <div className="flex flex-col justify-center md:flex-row">
+        <div className="m-10 p-5 bg-slate-100 rounded-lg">
+          <img src={dummy1} alt="dummy1" />
+          <h1 className="text-center m-2 font-bold">Book for excel </h1>
+          <h3 className="text-center">Reading very good</h3>
         </div>
-      </div>
-      <div className>
-        <img src={abc} className="rounded-xl"  />
+
+        <div className="m-10 p-5 bg-slate-100 rounded-lg">
+          <img src={dummy2} alt="dummy2" />
+          <h1 className="text-center m-2 font-bold">Book for excel </h1>
+          <h3 className="text-center">Reading very good</h3>
+        </div>
+
+        <div className="m-10 p-5 bg-slate-100 rounded-lg">
+          <img src={dummy3} alt="dummy3" />
+          <h1 className="text-center m-2 font-bold">Book for excel </h1>
+          <h3 className="text-center">Reading very good</h3>
+      
+        </div>
       </div>
     </div>
   );
