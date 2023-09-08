@@ -1,9 +1,29 @@
+import { useEffect, useState } from "react";
 import dummy1 from "./dummy_1.jpg";
 import dummy2 from "./dummy_2.jpg";
 import dummy3 from "./dummy_3.jpg";
 import google from "./google.png";
 
 function App() {
+  const [currentTime, setCurrentTime] = useState(new Date());
+  const [serverLocation, setServerLocation] = useState("");
+  const [serverIP, setServerIP] = useState("");
+  useEffect(() => {
+    setInterval(() => {
+      setCurrentTime(new Date());
+      console.log("website render");
+      fetch("https://ipinfo.io/json")
+        .then((response) => response.json())
+        .then((data) => {
+          setServerLocation(data.city + ", " + data.region);
+          setServerIP(data.ip);
+        })
+        .catch((error) => {
+          console.error("Error fetching server information:", error);
+        });
+    }, 1000);
+  }, []);
+
   const books = [
     {
       image: dummy1,
@@ -36,26 +56,39 @@ function App() {
 
   return (
     <div className="w-4/5 m-auto border-solid border-2 border-sky-500 rounded-xl">
-      <div className="text-9xl text-green-700 font-bold p-10 flex items-center justify-center">
+      <div className="text-9xl text-green-700 font-bold p-10 pt-2 flex items-center justify-center">
         <img src={google} alt="Google" className="mr-4" />
         <div className="text-4xl text-center">Book for dummy</div>
       </div>
       <div className="flex flex-col justify-center md:flex-row">
         {books.map((book, index) => (
-          <div key={index} className="m-10 p-5 bg-slate-100 rounded-lg hover:scale-105 text-center">
+          <div
+            key={index}
+            className="m-10 p-5 bg-slate-100 rounded-lg hover:scale-105 text-center"
+          >
             <img src={book.image} alt={`dummy${index + 1}`} />
             <h1 className="m-2 font-bold">{book.title}</h1>
-         
+
             <ul className="text-left px-10">
               {book.highlights.map((highlight, highlightIndex) => (
-                <li key={highlightIndex} >{highlight}</li>
+                <li key={highlightIndex}>{highlight}</li>
               ))}
             </ul>
           </div>
         ))}
       </div>
       <div>
-        <div className="text-4xl text-red-600 text-center font-bold mb-10 hover:scale-110">About us</div>
+        <div className="text-4xl text-red-600 text-center font-bold mb-5 hover:scale-110">
+          About us
+        </div>
+
+        <div className="text-2xl text-center font-bold mb-10">
+          Bây giờ là {currentTime.toLocaleTimeString()}
+        </div>
+        <div className="text-2xl font-bold mb-4">
+          Server Location: {serverLocation}
+        </div>
+        <div className="text-2xl font-bold">Server IP: {serverIP}</div>
       </div>
     </div>
   );
