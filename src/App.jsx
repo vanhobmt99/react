@@ -55,7 +55,7 @@ function App() {
         ))}
       </div>
       <div>
-        <div className="text-4xl text-red-600 text-center font-bold mb-10">About us</div>
+        <div className="text-4xl text-red-600 text-center font-bold mb-10 hover:scale-110">About us</div>
       </div>
     </div>
   );
