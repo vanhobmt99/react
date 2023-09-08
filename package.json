@@ -9,8 +9,8 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "deploy": "aws s3 rm s3://reactadv --recursive && aws s3 sync dist/ s3://reactadv && aws cloudfront create-invalidation --distribution-id E3L9RIU77YUU0 --paths '/*'"
-    ",
+    "deploy": "aws s3 rm s3://reactadv --recursive && aws s3 sync dist/ s3://reactadv && aws cloudfront create-invalidation --distribution-id E3L9RIU77YUU06 --paths  \"/.*\" "
+    ,
     "prod": "yarn build && yarn deploy"
     
     
