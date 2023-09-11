@@ -72,19 +72,19 @@ const books = [
 
 return (
   <div className="w-4/5 m-auto border-solid border-2 border-sky-500 rounded-xl">
-    <div className="text-9xl text-green-700 font-bold p-10 pt-2 flex items-center justify-center">
+    <div className="text-9xl text-green-700 font-bold p-5 pt-2 flex items-center justify-center sticky top-0 bg-green-200 z-10">
       <img src={google} alt="Google" className="mr-4" />
       <div className="text-4xl text-center">Book for dummy</div>
     </div>
-    <div className="flex flex-col justify-center md:flex-row">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-center">
       {books.map((book, index) => (
         <div
           key={index}
           className="m-10 p-5 bg-slate-100 rounded-lg hover:scale-105 text-center">
-          <img src={book.image} alt={`dummy${index + 1}`} />
+          <img src={book.image} alt={`dummy${index + 1}`} className="mx-auto" />
           <h1 className="m-2 font-bold">{book.title}</h1>
 
-          <ul className="text-left px-10">
+          <ul className="text-center px-10">
             {book.highlights.map((highlight, highlightIndex) => (
               <li key={highlightIndex}>{highlight}</li>
             ))}
