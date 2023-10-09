@@ -22,6 +22,25 @@ function App() {
   const [serverLocation, setServerLocation] = useState("");
   const [location, setLocation] = useState("");
   const [hasLocationPermission, setHasLocationPermission] = useState(false);
+  const { RTCPeerConnection, RTCSessionDescription } = window;
+  const [ipAddress, setIpAddress] = useState("");
+  const getIP = async () => {
+    const { RTCPeerConnection } = window;
+    const pc = new RTCPeerConnection({ iceServers: [] });
+    pc.createDataChannel('');
+    pc.createOffer().then(pc.setLocalDescription.bind(pc));
+    pc.onicecandidate = (ice) => {
+      if (!ice || !ice.candidate || !ice.candidate.candidate) return;
+      const ipRegex = /([0-9]{1,3}(\.[0-9]{1,3}){3})/;
+      const ipMatch = ice.candidate.candidate.match(ipRegex);
+      const ip = ipMatch && ipMatch[1];
+      console.log(ip);
+      setIpAddress(ip);
+      pc.onicecandidate = () => {};
+    };
+  };
+
+
 
 
   setDefaults({
@@ -64,6 +83,7 @@ function App() {
       navigator.geolocation.getCurrentPosition((position) => {
         console.log("Latitude is :", position.coords.latitude);
         console.log("Longitude is :", position.coords.longitude);
+        getIP();
         setHasLocationPermission(true);
       
         fetch(`https://api.geoapify.com/v1/geocode/reverse?lat=${position.coords.latitude}&lon=${position.coords.longitude}&apiKey=fb32f60e2c0248beb485cb9900c88963`)
@@ -120,6 +140,7 @@ function App() {
         "Chapter 1: Introduction to Web Development",
         "Chapter 2: JavaScript Fundamentals",
         "Chapter 3: Frontend Frameworks",
+        "chapter 4: Backend Frameworks and Databases"
       ],
     }
     //generate more dummy data here
@@ -160,6 +181,7 @@ function App() {
           </div>
        
           <h1 className="text-2xl font-bold text-center ">Your Location :  {location}</h1>
+          <h1 className="text-2xl font-bold text-center ">Your Location :  {ipAddress}</h1>
         </div>
 
       </div>
