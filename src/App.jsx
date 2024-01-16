@@ -78,7 +78,7 @@ function App() {
 
     <div className=" m-auto border-solid border-2 border-sky-500 rounded-xl ">
 
-<div className="fixed top-0 left-1/2 transform -translate-x-1/2 z-10 text-9xl text-green-700 font-bold p-10 pt-2">
+  <div className="fixed top-0 left-1/2 transform -translate-x-1/2 z-10 text-9xl text-green-700 font-bold p-10 pt-2">
 
         <div className="flex items-center">
           <img src={google} alt="Google" className="mr-4" />
