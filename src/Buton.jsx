@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-import  abc  from "./photo-1518780664697-55e3ad937233.jpg";
+import  abc  from "./photo-1518780664697-55e3ad937233.jpeg";
 
 function Buton() {
   const reducer = (count, action) => {
