@@ -1,8 +1,8 @@
-import headphone from "./photo-1518780664697-55e3ad937233.avif";
-import headphone3 from "./photo-1568605114967-8130f3a36994.avif";
-import headphone4 from "./photo-1568605114967-8130f3a36994.avif";
-import headphone5 from "./photo-1598228723793-52759bba239c.avif";
-import headphone6 from "./photo-1600585154340-be6161a56a0c.avif";
+import headphone from "./photo-1518780664697-55e3ad937233.jpg";
+import headphone3 from "./photo-1568605114967-8130f3a36994.jpg";
+import headphone4 from "./photo-1568605114967-8130f3a36994.jpg";
+import headphone5 from "./photo-1598228723793-52759bba239c.jpg";
+import headphone6 from "./photo-1600585154340-be6161a56a0c.jpg";
 
 
 

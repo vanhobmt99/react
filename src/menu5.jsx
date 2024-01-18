@@ -1,7 +1,7 @@
 
 import facebook from "./facebook.png";
 import google from "./google.png";
-import headphone from "./photo-1575517111478-7f6afd0973db.avif";
+import headphone from "./photo-1575517111478-7f6afd0973db.jpg";
 function menu5() {
   return (
     <>
