@@ -131,7 +131,7 @@ function App() {
             <h1 >City IP: {serverLocation}</h1>
             <h1 >Bây giờ là {currentTime.toLocaleTimeString()}</h1>
           </div>
-<h1>Test upload to github </h1>
+
           
         </div>
       </div>
