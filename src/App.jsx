@@ -3,6 +3,7 @@ import dummy1 from "./dummy_1.jpg";
 import dummy2 from "./dummy_2.jpg";
 import dummy3 from "./dummy_3.jpg";
 import google from "./google.png";
+import dummy4 from "./dummy_4.jpg"; // Fixed import statement
 
 function App() {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -10,32 +11,40 @@ function App() {
   const [serverLocation, setServerLocation] = useState("");
 
   useEffect(() => {
-
-    console.log("website render");
-    fetch("https://api.ipify.org?format=json")
-      .then((response) => response.json())
-      .then((data) => {
-        setClientIP(data.ip);
-      })
-      .catch((error) => {
-        console.error("Error fetching client IP:", error);
-      });
-
-    fetch("https://ipwho.is")
-      .then((response) => response.json())
-      .then((data) => {
-        setServerLocation(data.region);
-      })
-      .catch((error) => {
-        console.error("Error fetching server information:", error);
-      });
-  }, [serverLocation, clientIP]);
-
+    const interval = setInterval(() => {
+      console.log("website render");
+      fetch("https://api.ipify.org?format=json")
+        .then((response) => response.json())
+        .then((data) => {
+          setClientIP(data.ip);
+        })
+        .catch((error) => {
+          console.error("Error fetching client IP:", error);
+        });
+  
+      fetch("http://ip-api.com/json")
+        .then((response) => response.json())
+        .then((data) => {
+          setServerLocation(data.city);
+        })
+        .catch((error) => {
+          console.error("Error fetching server information:", error);
+        });
+    }, 1000);
+  
+    // Clear the interval when the component is unmounted
+    return () => clearInterval(interval);
+  }, []);
+  
   useEffect(() => {
-    setInterval(() => {
+    const timeInterval = setInterval(() => {
       setCurrentTime(new Date());
     }, 1000);
+  
+    // Clear the interval when the component is unmounted
+    return () => clearInterval(timeInterval);
   }, []);
+
 
 
 
@@ -70,15 +79,24 @@ function App() {
         "Chapter 3: App Development Best Practices",
       ],
     },
+    {
+      image: dummy4,
+      title: "iOS App Development",
+      highlights: [
+        "Chapter 1: Getting Started with iOS",
+        "Chapter 2: User Interface Design",
+        "Chapter 3: App Development Best Practices",
+      ],
+    },
 
   ];
 
   return (
 
 
-    <div className=" m-auto border-solid border-2 border-sky-500 rounded-xl ">
+    <div className=" m-auto border-spacing-7 border-2 border-sky-500 rounded-xl ">
 
-  <div className="fixed top-0 left-1/2 transform -translate-x-1/2 z-10 text-9xl text-green-700 font-bold p-10 pt-2">
+      <div className="fixed top-0 left-1/2 transform -translate-x-1/2 z-10 text-9xl text-green-700 font-bold p-10 pt-2">
 
         <div className="flex items-center">
           <img src={google} alt="Google" className="mr-4" />
@@ -87,11 +105,11 @@ function App() {
       </div>
 
 
-      <div className="flex mt-20 flex-wrap justify-left flex-row ">
+      <div className="mt-20  justify-center flex flex-col sm:flex sm:flex-row sm:justify-center">      
         {books.map((book, index) => (
           <div
             key={index}
-            className="m-4 px-2 py-10 bg-teal-400 rounded-lg hover:scale-105 w-1/3">
+            div className="m-10 px-30 py-10 bg-slate-200 rounded-lg hover:scale-105 w-full sm:w-1/3">
 
             <img src={book.image} alt={`dummy${index + 1}`} className="w-[18em] h-[18em] mx-auto" />
             <h1 className="m-1 font-bold text-center">{book.title}</h1>
@@ -107,17 +125,17 @@ function App() {
         <div className="text-4xl text-red-600 text-center font-bold mb-5 hover:scale-110">
           About us
         </div>
-        <div>
-          <div className="flex flex-row items-center justify-center">
-            <h1 className="text-2xl font-bold mx-10">Client IP: {clientIP}</h1>
-            <h1 className="text-2xl font-bold">City IP: {serverLocation}</h1>
-          </div>
-          <h1 className="text-2xl font-bold text-center ">
-            Bây giờ là {currentTime.toLocaleTimeString()}
+        <div className="text-center font-bold ">
+        
+            <h1 >Client IP: {clientIP} </h1>
+            <h1 >City IP: {serverLocation}</h1>
+            <h1 >Bây giờ là {currentTime.toLocaleTimeString()}
           </h1>
+          </div>
+          
         </div>
       </div>
-    </div>
+    
   );
 }
 
