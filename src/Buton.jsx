@@ -75,7 +75,7 @@ function Buton() {
       </div>
       
       <div className="font-bold text-center mt-10 ">
-        <h1 ><Link to="/" className="bg-green-400 p-2  ">Button</Link></h1>
+        <h1 ><Link to="/" className="bg-indigo-500 p-2  ">Button</Link></h1>
       </div>
     </div>
   );
