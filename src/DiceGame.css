@@ -1,0 +1,34 @@
+/* DiceGame.css */
+
+.result-container {
+  transition: opacity 3s ease-in-out;
+  display: flex;
+}
+
+.visible {
+  opacity: 1;
+  pointer-events: auto; /* Enable pointer events when visible */
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none; /* Disable pointer events when hidden */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
