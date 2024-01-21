@@ -1,18 +1,18 @@
 /* DiceGame.css */
 
 .result-container {
-  transition: opacity 3s ease-in-out;
+  transition: opacity 03s ease-in-out;
   display: flex;
 }
 
 .visible {
   opacity: 1;
-  pointer-events: auto; /* Enable pointer events when visible */
+  pointer-events: auto;
 }
 
 .hidden {
   opacity: 0;
-  pointer-events: none; /* Disable pointer events when hidden */
+  pointer-events: none;
 }
 
 @keyframes fadeIn {
