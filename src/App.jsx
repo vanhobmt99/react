@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import Buton from "./Buton";
 import DiceGame from "./baucua";
+import NotFound from "./404";
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/button" element={<Buton />} />
         <Route path="/baucua" element={<DiceGame />} />
+        <Route path="*" element={<NotFound />} />
 
         
       </Routes> 
