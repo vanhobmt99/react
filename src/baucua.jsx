@@ -24,7 +24,6 @@ const DiceGame = () => {
   const rollDice = () => {
     setRolling(true);
     setShowResults(false);
-    setShowDice(true);
 
     audio.play().catch(error => {
       console.error('Audio playback blocked:', error);
