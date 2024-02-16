@@ -1,4 +1,6 @@
 import bunimg from './assets/bun.png';
+import { CiLink } from "react-icons/ci";
+
 
 const Bun = () => {
     return (
@@ -121,14 +123,15 @@ const Bun = () => {
                             </a>
                         </div>
 
-                        <div className="inline-block">
+                        <div className=" ">
                             <a href="https://google.com">
-                                <h2 className='font-bold text-pink-500'>
-                                    Workable
+                                <h2 className="font-bold text-pink-500 flex no-wrap">Workable<CiLink />
                                 </h2>
+                              
                             </a>
                         </div>
-                      
+
+
                     </div>
                 </div>
             </div>
