@@ -123,16 +123,14 @@ const Bun = () => {
                             </a>
                         </div>
 
-                        <div className=" ">
+                        <div>
                             <a href="https://google.com">
                                 <h2 className="font-bold text-pink-500 flex no-wrap">Workable<CiLink />
                                 </h2>
-                              
                             </a>
                         </div>
-
-
                     </div>
+                    
                 </div>
             </div>
         </div>
