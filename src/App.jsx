@@ -14,6 +14,7 @@ export default function App() {
         <Route path="/button" element={<Buton />} />
         <Route path="/baucua" element={<DiceGame />} />
         <Route path="/bun" element={<Bun />} />
+        <Route path="/*" element={<NotFound/>} ></Route>
         
 
         
