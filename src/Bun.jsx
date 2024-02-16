@@ -4,7 +4,7 @@ const Bun = () => {
     return (
         <div className="bg-slate-100 h-screen flex justify-center">
             <div className="text-center">
-                <div className="pb-16">
+                <div className="pb-40">
                     <div className="mt-16 mb-5 ">
                         <img src={bunimg} alt="bun" className="mx-auto" />
                     </div>
