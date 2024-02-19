@@ -95,7 +95,7 @@ const Bun = () => {
                         </div>
                     </div>
 
-                    <div className="flex justify-center space-x-3  border-b-2 pb-4 mt-2 border-gray-500">
+                    <div className="flex justify-center space-x-3  border-b-1 pb-4 mt-2 border-gray-500">
                         <div>
                             <a href="https://google.com">
                                 <h2 className='font-bold text-pink-500'>
