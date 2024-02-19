@@ -128,7 +128,7 @@ const Bun = () => {
                                 <h2 className="font-bold text-pink-500 flex no-wrap">Workable<CiLink />
                                 </h2>
                             </a>
-                            <h1>test</h1>
+                         
                         </div>
                     </div>
 
