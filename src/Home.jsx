@@ -116,6 +116,7 @@ const Home = () => {
                     <h1>City IP: {serverLocation}</h1>
                     <h1>Bây giờ là {currentTime.toLocaleTimeString()}</h1>
                     <h1>Nhiệt độ bây hôm nay: {temperature}</h1>
+                <h1>ahihi đồ chó</h1>
                 </div>
             </div>
             <div className="font-bold text-center mt-10">
