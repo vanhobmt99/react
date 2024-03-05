@@ -10,6 +10,7 @@ const Home = () => {
     const [currentTime, setCurrentTime] = useState(new Date());
     const [clientIP, setClientIP] = useState("");
     const [serverLocation, setServerLocation] = useState("");
+    const [temperature, settemperature] = useState("");
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -30,8 +31,19 @@ const Home = () => {
                 })
                 .catch((error) => {
                     console.error("Error fetching server information:", error);
+                }); 
+                
+               fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/binh%20d%C6%B0%C6%A1ng?unitGroup=metric&include=days&key=6NFNS78EEKY57Z7KEHHNKVJ35&contentType=json")
+               .then((response) => response.json())
+                .then((data) => {
+                    settemperature(data.days[0].temp + "°C");
+                })
+                .catch((error) => {
+                    console.error("Error fetching server information:", error);
                 });
         }, 1000);
+
+
 
         // Clear the interval when the component is unmounted
         return () => clearInterval(interval);
@@ -131,6 +143,7 @@ const Home = () => {
                     <h1 >Client IP: {clientIP} </h1>
                     <h1 >City IP: {serverLocation}</h1>
                     <h1 >Bây giờ là {currentTime.toLocaleTimeString()}</h1>
+                    <h1> Nhiệt độ bây hôm nay : {temperature}</h1>
                 </div>
 
 
