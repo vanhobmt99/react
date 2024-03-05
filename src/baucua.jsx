@@ -75,7 +75,7 @@ const DiceGame = () => {
       </div>
 
       <div className={`flex flex-column items-center justify-center`} style={{ background: `url(${dianhua})`, minHeight: '800px', width: '40%', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <div className={showDice ? 'visible' : 'hidden'}>
+        {showDice && (
           <div className="flex flex-wrap justify-center">
             {diceValues.map((value, index) => (
               <div
@@ -87,13 +87,13 @@ const DiceGame = () => {
                   overflow: 'hidden',
                 }}
               >
-                {value !== 0 ? (
+                {value !== 0 && (
                   <img src={diceImages[value - 1]} alt={diceNames[value - 1]} className="w-auto h-auto" />
-                ) : null}
+                )}
               </div>
             ))}
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

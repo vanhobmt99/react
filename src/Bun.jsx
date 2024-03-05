@@ -43,13 +43,13 @@ const Bun = () => {
                         </div>
 
                         <div className='col-span-2'>
-                            <div className='font-bold text-gray-500'>
+                            <div className='font-bold text-gray-700'>
                                 <h2>On site</h2>
                             </div>
                         </div>
 
                         <div className='col-span-2'>
-                            <div className='font-bold text-gray-500 w-3/4 text-left'>
+                            <div className=' text-gray-700 w-3/4 text-left'>
                                 <h2>San Francisco, California, United States</h2>
                             </div>
                         </div>
@@ -68,18 +68,18 @@ const Bun = () => {
                         </div>
 
                         <div className='col-span-2'>
-                            <div className='font-bold text-gray-500'>
+                            <div className='font-bold text-gray-700'>
                                 <h2>On site</h2>
                             </div>
                         </div>
 
                         <div className='col-span-2'>
-                            <div className='font-bold text-gray-500 w-3/4 text-left'>
+                            <div className=' text-gray-700 w-3/4 text-left'>
                                 <h2>San Francisco, California, United States</h2>
                             </div>
                         </div>
 
-                        <div className='col-span-2 font-bold text-gray-500'>
+                        <div className='col-span-2 text-gray-600'>
                             <h1>Full Time</h1>
                         </div>
 
@@ -87,7 +87,7 @@ const Bun = () => {
 
                     <div>
                         <div className="flex justify-between mt-8 border-b-2 pb-4 border-gray-500">
-                            <h1 className="font-bold text-gray-500">If there isn't a job opening that matches your skills, you can email us your resume.</h1>
+                            <h1 className=" text-gray-700">If there isn't a job opening that matches your skills, you can email us your resume.</h1>
                             <div className="bg-pink-500 text-white  p-2  rounded-lg">
                                 <button>Email my resume</button>
                             </div>
@@ -95,7 +95,7 @@ const Bun = () => {
                         </div>
                     </div>
 
-                    <div className="flex justify-center space-x-3  border-b-1 pb-4 mt-2 border-gray-500">
+                    <div className="flex justify-center space-x-3  border-b-2 pb-4 mt-2 border-gray-500">
                         <div>
                             <a href="https://google.com">
                                 <h2 className='font-bold text-pink-500'>
