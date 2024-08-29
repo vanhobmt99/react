@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const RandomArray = () => {
+const Random = () => {
   const [numbers, setNumbers] = useState([]);
 
   const randomNumber = () => {
@@ -64,4 +64,4 @@ const RandomArray = () => {
   );
 };
 
-export default RandomArray;
+export default Random;

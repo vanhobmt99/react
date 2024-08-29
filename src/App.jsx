@@ -5,6 +5,7 @@ import Buton from "./Buton";
 import DiceGame from "./baucua";
 import NotFound from "./404";
 import Bun from "./Bun";
+import Random from "./Random";
 
 export default function App() {
   return (
@@ -15,7 +16,8 @@ export default function App() {
         <Route path="/baucua" element={<DiceGame />} />
         <Route path="/bun" element={<Bun />} />
         <Route path="/*" element={<NotFound/>} ></Route>
-        
+        <Route path="/random" element={<Random/>} ></Route>
+    
 
         
       </Routes> 
