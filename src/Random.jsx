@@ -6,13 +6,18 @@ const RandomArray = () => {
   const randomNumber = () => {
     const random = Math.floor(Math.random() * 100);
     setNumbers((previousNumbers) => [...previousNumbers, random]);
+    console.log('random ',random);
+    console.log(numbers + "numbers");
+
   };
 
   const clearNumbers = () => {
     setNumbers([]);
+    console.log('clearNumbers');
   };
 
   const deleteLastNumber = () => {
+    console.log('deleteLastNumber' + numbers.at(-1));
     setNumbers((previousNumbers) => previousNumbers.slice(0, -1));
   };
 
