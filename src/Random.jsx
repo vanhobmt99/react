@@ -1,24 +1,19 @@
 import React, { useState } from "react";
 
-const Random = () => {
+const RandomArray = () => {
   const [numbers, setNumbers] = useState([]);
 
-  const randomNumber = () => {
+  const generateRandomNumber = () => {
     const random = Math.floor(Math.random() * 100);
-    setNumbers((previousNumbers) => [...previousNumbers, random]);
-    console.log('random ',random);
-    console.log(numbers + "numbers");
-
+    setNumbers((prevNumbers) => [...prevNumbers, random]);
   };
 
   const clearNumbers = () => {
     setNumbers([]);
-    console.log('clearNumbers');
   };
 
   const deleteLastNumber = () => {
-    console.log('deleteLastNumber' + numbers.at(-1));
-    setNumbers((previousNumbers) => previousNumbers.slice(0, -1));
+    setNumbers((prevNumbers) => prevNumbers.slice(0, -1));
   };
 
   return (
@@ -27,22 +22,22 @@ const Random = () => {
         <h1 className="text-4xl font-extrabold mt-10 text-blue-600">
           Random Number Generator
         </h1>
-        <div className="flex flex-col items-center justify-center mt-8 text-lg">
-          <div className="space-x-4">
+        <div className="flex flex-col items-center justify-center mt-8 text-lg space-y-4">
+          <div className="flex space-x-4">
             <button
-              className="mb-6 px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-full shadow-lg transform transition duration-300 hover:scale-105 focus:outline-none"
-              onClick={randomNumber}
+              className="px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-full shadow-lg transform transition duration-300 hover:scale-105 focus:outline-none"
+              onClick={generateRandomNumber}
             >
               Generate Random Number
             </button>
             <button
-              className="mb-6 px-6 py-3 bg-gradient-to-r from-red-500 to-indigo-500 text-white rounded-full shadow-lg transform transition duration-300 hover:scale-105 focus:outline-none"
+              className="px-6 py-3 bg-gradient-to-r from-red-500 to-indigo-500 text-white rounded-full shadow-lg transform transition duration-300 hover:scale-105 focus:outline-none"
               onClick={clearNumbers}
             >
-              Delete Previous Numbers
+              Clear Numbers
             </button>
             <button
-              className="mb-6 px-6 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-full shadow-lg transform transition duration-300 hover:scale-105 focus:outline-none"
+              className="px-6 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-full shadow-lg transform transition duration-300 hover:scale-105 focus:outline-none"
               onClick={deleteLastNumber}
             >
               Delete Last Number
@@ -52,7 +47,7 @@ const Random = () => {
             {numbers.map((num, index) => (
               <span
                 key={index}
-                className="bg-blue-200 text-blue-800 px-3 py-1 rounded-full border border-blue-400"   
+                className="bg-blue-200 text-blue-800 px-3 py-1 rounded-full border border-blue-400"
               >
                 {num}
               </span>
@@ -64,4 +59,4 @@ const Random = () => {
   );
 };
 
-export default Random;
+export default RandomArray;
